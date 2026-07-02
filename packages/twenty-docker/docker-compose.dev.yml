@@ -10,7 +10,7 @@ name: twenty-dev
 
 services:
   db:
-    image: postgres:16
+    image: postgres:16-alpine
     volumes:
       - dev-db-data:/var/lib/postgresql/data
     ports:
@@ -27,7 +27,7 @@ services:
     restart: unless-stopped
 
   redis:
-    image: redis:7
+    image: redis:7-alpine
     ports:
       - "6379:6379"
     command: ["--maxmemory-policy", "noeviction"]
